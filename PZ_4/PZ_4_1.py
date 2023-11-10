@@ -10,7 +10,7 @@ while type(A) != float or type(N) != int or B <= N:  # [A != плавает], [N
         A = float(A)
         N = int(N)
         if B <= N:  # если B меньше или равно N
-            print('\n', f'{A} возводим в степень {B} и получаем = {A ** B}')
+            print('\n', f'{A} возводим в степень {B} и получаем = {int(A ** B)}')
         B = B + 1
     except ValueError:
         print('Вы ввели неправильно одно из чисел, исправьте!')
