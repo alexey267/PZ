@@ -4,10 +4,10 @@
 # полученных линий.
 
 def one(text):
-    gorizont = "-" * (len(text) + 4)
+    gorizont = "-" * (len(text) + 4)  # чтение текста и добавление тире
     print(gorizont)
     print(f"| {text} |")
     print(gorizont)
 
 
-one(input("Введите текст: "))
+one(input("Введите текст: "))  # запуск функции
