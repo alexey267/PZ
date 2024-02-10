@@ -19,6 +19,7 @@ for i in range(4):
     punctuation_count += sum(1 for char in line if char in string.punctuation)
 
 # Вывод количества знаков пунктуации
+punctuation_count -= 1
 print("Количество знаков пунктуации в первых четырех строках:", punctuation_count)
 
 # Создание нового файла с текстом в стихотворной форме
