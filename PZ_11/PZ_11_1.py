@@ -10,10 +10,10 @@
 
 #  создание файлов
 with open('file1.txt', 'w') as file1:
-    file1.write('1 2 3 4 5 6 7')
+    file1.write('1 2 3 4 5')
 
 with open('file2.txt', 'w') as file2:
-    file2.write('-1 -2 -3 -4 -5')
+    file2.write('-1 -2 -3 -4')
 
 #  чтение файлов
 with open('file1.txt', 'r') as file1:
