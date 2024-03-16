@@ -20,6 +20,3 @@ data = [match.group() for line in lines  # поиск совпадений
 
 print(data)  # вывод списка
 print(f'Количество сегментов: {len(data)}')  # количество сегментов списка
-
-
-
