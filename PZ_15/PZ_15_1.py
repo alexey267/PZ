@@ -23,6 +23,31 @@ c.execute("""CREATE TABLE IF NOT EXISTS products (
 # коммит действия
 conn.commit()
 
+# После создания таблицы и перед добавлением начальных данных
+c.execute("SELECT  *  FROM products")
+for row in c.fetchall():
+    print(row)
+
+
+def add_initial_data():
+    # Проверяем, есть ли уже продукты в базе. Если есть, мы не добавляем новые.
+    c.execute('SELECT * FROM products')
+    if c.fetchall():
+        return
+
+    # Предполагаем, что у нас есть список продуктов, которые мы хотим добавить
+    products = [
+        {'product_code': str(i), 'product_name': f'Товар {i}', 'shop_name': 'Пятерочка', 'shop_requests': i, 'quantity_in_stock': i, 'unit_of_measure': 'шт', 'wholesale_price': i} for i in range(1, 11)
+    ]
+
+    # Добавляем продукты в базу данных
+    for product in products:
+        c.execute("INSERT INTO products VALUES (?, ?, ?, ?, ?, ?, ?)", list(product.values()))
+    conn.commit()
+
+add_initial_data()
+
+
 def insert_product():
     product_code = input("Введите код товара: ")
     product_name = input("Введите наименование товара: ")
@@ -47,7 +72,7 @@ def find_product():
               f'Заявка: {product[3]} \n'
               f'Количество: {product[4]} \n'
               f'единицы: {product[5]} \n'
-              f'Цена {product[6]} \n'
+              f'Цена: {product[6]} \n'
               f'------------------')
 
 
@@ -85,4 +110,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
