@@ -63,13 +63,13 @@ number_entry.grid(row=11, column=1, padx=10, pady=5)
 tk.Label(root, text="Mathematical Captcha", font=("Helvetica", 12)).grid(row=12, column=0, padx=10, pady=5, sticky="w")
 tk.Label(root, text="6 + 8 =", font=("Helvetica", 8, "bold")).grid(row=12, column=1, padx=10, pady=5, sticky="w")
 
-def on_entry_click():
+def on_entry_click(event):
     if captcha_entry.get() == 'Enter sum':
         captcha_entry.delete(0, "end")  # Удалить все содержимое
         captcha_entry.insert(0, '')  # Убедиться, что поле пустое
         captcha_entry.config(fg='black')
 
-def on_focusout():
+def on_focusout(event):
     if captcha_entry.get() == '':
         captcha_entry.insert(0, 'Enter sum')
         captcha_entry.config(fg='grey')
