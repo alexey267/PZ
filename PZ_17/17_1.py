@@ -32,7 +32,7 @@ email_entry.grid(row=3, column=1, padx=10, pady=5)
 tk.Label(root, text="Dropdown", font=("Helvetica", 12)).grid(row=4, column=0, padx=10, pady=5, sticky="w")
 options = ["Option 1", "Option 2", "Option 3"]
 dropdown = ttk.Combobox(root, values=options)
-dropdown.grid(row=4, column=1, padx=10, pady=5)
+dropdown.grid(row=4, column=1, padx=10, pady=5, sticky="w")
 dropdown.current(0)
 
 # Radio Buttons
