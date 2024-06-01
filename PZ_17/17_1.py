@@ -93,7 +93,7 @@ captcha_frame.grid(row=13, column=1, padx=10, pady=5, sticky="w")
 # Checkbox для подтверждения
 tk.Checkbutton(captcha_frame, text="I'm not a robot", font=("Helvetica", 12)).grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
-# Загружаемое изображение (например, логотип капчи)
+# Загружаемое изображение
 captcha_image_path = "captcha_image.png"
 img = Image.open(captcha_image_path)
 img = img.resize((50, 50))  # Изменение размера изображения
